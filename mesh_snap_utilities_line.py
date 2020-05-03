@@ -682,6 +682,7 @@ class SnapUtilitiesLine(Operator):
 
 
     def modal_navigation(self, context, event):
+        print("modal_navigation!!!")
         evkey = (event.alt, event.ctrl, event.shift, event.type, event.value)
         if evkey in self.navigation_keys._rotate:
             bpy.ops.view3d.rotate('INVOKE_DEFAULT')
@@ -699,6 +700,7 @@ class SnapUtilitiesLine(Operator):
                         v3d = context.space_data
                         dist_range = (v3d.clip_start, v3d.clip_end)
                         rv3d = context.region_data
+                        print("zoom!!!")
                         if (key[5] < 0 and rv3d.view_distance < dist_range[1]) or\
                            (key[5] > 0 and rv3d.view_distance > dist_range[0]):
                                 rv3d.view_location += key[5] * (self.location - rv3d.view_location) / 6

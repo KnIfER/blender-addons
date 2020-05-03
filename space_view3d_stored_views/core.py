@@ -55,6 +55,7 @@ class POV(StoredView):
         self.logger = logging.getLogger('%s.POV' % __name__)
 
     def from_v3d(self, stored_view):
+        print("from_v3d!!!")
         view3d = self.view3d
         region3d = view3d.region_3d
 
@@ -78,6 +79,7 @@ class POV(StoredView):
         stored_view.cursor_location = view3d.cursor_location
 
     def update_v3d(self, stored_view):
+        print("update_v3d!!!")
         view3d = self.view3d
         region3d = view3d.region_3d
         region3d.view_distance = stored_view.distance
